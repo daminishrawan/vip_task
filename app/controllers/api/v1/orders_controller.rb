@@ -22,7 +22,7 @@ class Api::V1::OrdersController < ApplicationController
 
         # Deduct quantity and prepare line item parameters
         product.update!(stock_quantity: product.stock_quantity - item[:quantity].to_i)
-        
+
         line_price = product.price_cents * item[:quantity].to_i
         total_cents += line_price
 

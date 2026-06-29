@@ -1,6 +1,6 @@
 # app/controllers/api/v1/auth_controller.rb
 class Api::V1::AuthController < ApplicationController
-  skip_before_action :authenticate_request!, only: [:login]
+  skip_before_action :authenticate_request!, only: [ :login ]
 
   def login
     user = User.find_by(email: params[:email])

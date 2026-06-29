@@ -1,6 +1,6 @@
 # app/controllers/api/v1/products_controller.rb
 class Api::V1::ProductsController < ApplicationController
-  before_action :require_admin!, only: [:create, :update]
+  before_action :require_admin!, only: [ :create, :update ]
 
   def index
     # CACHING: Compute cache key dynamically using a digest of the query filters
@@ -13,7 +13,7 @@ class Api::V1::ProductsController < ApplicationController
       scope = Product.includes(:brand) # Eager load brand names to prevent N+1 queries
       scope = scope.where(brands: { category: category }) if category.present?
       scope = scope.where("stock_quantity > ?", 0) if in_stock
-      
+
       # Map data array for serializing to make sure it's safely cached as primitive data structures
       scope.map do |product|
         {

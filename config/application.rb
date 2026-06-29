@@ -10,7 +10,7 @@ module BrewHub
 
     # Tell Rails to process background tasks via Sidekiq
     config.active_job.queue_adapter = :sidekiq
-    
+
     # Only if you need API-only behavior configuration
     config.api_only = true
   end
