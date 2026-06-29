@@ -34,7 +34,7 @@ Built using **Ruby on Rails (API-only mode)**, PostgreSQL, Redis, and Sidekiq.
 
 Below is the verified API request suite configuration executed within Postman, covering authentication, catalog indexing, and transactional order dispatching.
 
-![Postman Collection Setup](assets/image/postmanCollection.png)
+![Postman Collection Setup](app/assets/images/postmanCollection.png)
 
 ---
 
